@@ -13,10 +13,15 @@ class Routing
     }
     public function run()
     {
+        global $base_url;
         $path = realpath(dirname(__FILE__)."/../../application/controller/".$this->current_route[0].".php");
         if (!file_exists($path)){
-            echo "404 - file not exists!!";
-            exit;
+            if (file_exists(realpath(dirname(__FILE__)."/../../application/controller/Home.php"))){
+                header("Location: $base_url"."home");
+            } else {
+                echo "404 - file not exists!!";
+                exit;
+            }
         }
         require_once ($path);
         sizeof($this->current_route) == 1 ? $method = "index" : $method = $this->current_route[1];

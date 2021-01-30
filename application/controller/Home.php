@@ -8,6 +8,10 @@ class Home extends Controller
 {
     public function index()
     {
-        echo "index";
+        $this->view("index");
+    }
+    public function create()
+    {
+
     }
 }

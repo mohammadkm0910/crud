@@ -1,9 +1,10 @@
 <?php
 
 namespace Application\Controller;
+use System\Traits\Redirect;
+use System\Traits\View;
+
 class Controller
 {
-    public function x(){
-        echo "<h1>XXXXXXXXXXXXXXXXXXXXX</h1>";
-    }
+    use Redirect,View;
 }
