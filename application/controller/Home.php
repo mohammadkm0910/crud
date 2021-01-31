@@ -12,6 +12,9 @@ class Home extends Controller
     }
     public function create()
     {
-
+        $this->view("create");
+    }
+    public function edit($getId){
+        $this->view("edit",compact("getId"));
     }
 }

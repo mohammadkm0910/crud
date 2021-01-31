@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="public/icon/font-awesome.min.css">
-    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="<?php $this->asset('css/style.css'); ?>">
+    <link rel="stylesheet" href="<?php $this->asset('icon/font-awesome.min.css'); ?>">
     <title>اطلاعات کاربران</title>
 </head>
 <body dir="rtl">
 <div class="container">
     <div class="row">
-        <a href="#" class="btn">اضافه کردن کاربر</a>
+        <a href="<?php $this->url('home/create'); ?>" class="btn">اضافه کردن کاربر</a>
     </div>
     <div class="scroll-x">
         <table class="table">

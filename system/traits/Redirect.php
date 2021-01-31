@@ -1,15 +1,13 @@
 <?php
 
-
 namespace System\Traits;
-
-
 trait Redirect
 {
     protected function redirect($url)
     {
-        global $base_url;
-        header("Location: $base_url$url");
+        global $base_dir;
+        $protocol = $_SERVER["REQUEST_SCHEME"]."://";
+        header("Location: $protocol".$_SERVER["HTTP_HOST"].$base_dir.$url);
     }
     protected function back()
     {
@@ -19,5 +17,6 @@ trait Redirect
         } else {
             echo "rout not found";
         }
+
     }
 }
